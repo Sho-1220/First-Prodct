@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オンラインクイズゲーム</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- ホーム画面 -->
+        <div id="home-screen" class="screen active">
+            <h1>オンラインクイズゲーム</h1>
+            <div class="options">
+                <label for="category-select">カテゴリー:</label>
+                <select id="category-select">
+                    <option value="all">すべて</option>
+                    <!-- JavaScriptで動的にカテゴリーを追加 -->
+                </select>
+            </div>
+            <div class="options">
+                <label for="difficulty-select">難易度:</label>
+                <select id="difficulty-select">
+                    <option value="all">すべて</option>
+                    <!-- JavaScriptで動的に難易度を追加 -->
+                </select>
+            </div>
+            <button id="start-button">スタート</button>
+            <button id="highscores-button">ハイスコア</button>
+        </div>
+        <!-- クイズ画面 -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div id="category">カテゴリー: </div>
+                <div id="timer-container">
+                    <div id="question-timer">質問時間: <span id="time">30</span>秒</div>
+                    <div id="total-timer">残り時間: <span id="total-time">300</span>秒</div> <!-- トータルタイマー -->
+                </div>
+                <div id="score">スコア: <span id="current-score">0</span></div>
+            </div>
+            <div id="question">質問がここに表示されます</div>
+            <div id="choices" class="choices">
+                <!-- 選択肢ボタンが動的に挿入されます -->
+            </div>
+            <div id="feedback" class="feedback"></div>
+        </div>
+        <!-- 結果画面 -->
+        <div id="result-screen" class="screen">
+            <h2>結果</h2>
+            <p>あなたのスコア: <span id="final-score">0</span></p>
+            <input type="text" id="username" placeholder="ユーザー名">
+            <button id="submit-score">スコアを送信</button>
+            <button id="play-again">もう一度プレイ</button>
+            <button id="back-button-result">ホームに戻る</button>
+        </div>
+        <!-- ハイスコア画面 -->
+        <div id="highscores-screen" class="screen">
+            <h2>ハイスコア</h2>
+            <ul id="highscores-list">
+                <!-- ハイスコアリストが動的に挿入されます -->
+            </ul>
+            <button id="back-button">戻る</button>
+        </div>
+    </div>
+    <!-- サウンドファイル -->
+    <audio id="correct-sound" src="assets/sounds/correct.mp3"></audio>
+    <audio id="wrong-sound" src="assets/sounds/wrong.mp3"></audio>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
